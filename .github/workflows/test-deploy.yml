@@ -26,7 +26,7 @@ jobs:
         run: pip install -r requiments.txt
         # Запускаем тесты
       - name: Run tests
-        run: python -m pytest
+        run: pytest
         # Для успешного запуска тестов необходимо в переменную окружения DATABASE_URL записать корректную строку подключения к любой БД
         env:
           DATABASE_URL: sqlite:///./sqlite.db
