@@ -5,11 +5,10 @@ from src.main import app, get_db
 from src.models import Base
 from datetime import date
 
-SQLALCHEMY_DATABASE_URL = "postgresql://postgres:9975@localhost/test"  # тестовая бд
+SQLALCHEMY_DATABASE_URL = environ.get('DATABASE_URL') # тестовая бд
 
-engine = create_engine(
-    SQLALCHEMY_DATABASE_URL, connect_args={}
-)
+engine = create_engine(SQLALCHEMY_DATABASE_URL)
+
 TestingSessionLocal = sessionmaker(
     autocommit=False, autoflush=False, bind=engine)
 
