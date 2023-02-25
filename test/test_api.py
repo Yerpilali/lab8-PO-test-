@@ -4,6 +4,7 @@ from sqlalchemy.orm import sessionmaker
 from src.main import app, get_db
 from src.models import Base
 from datetime import date
+from os import environ
 
 SQLALCHEMY_DATABASE_URL = environ.get('DATABASE_URL') # тестовая бд
 
